@@ -1,0 +1,25 @@
+# Docker install
+curl -fsSL https://get.docker.com -o install-docker.sh
+sudo sh install-docker.sh
+
+# Docker mirror
+sudo gnome-text-editor /etc/docker/daemon.json
+{
+    "registry-mirrors": [
+        "https://docker.m.daocloud.io",
+        "https://docker.1panel.live",
+        "https://hub.rat.dev"
+    ]
+}
+sudo service docker restart
+
+# Docker ubuntu
+sudo docker create -it --name aa ubuntu /bin/bash
+sudo docker start aa && sudo docker exec -it aa /bin/bash
+sudo docker stop aa
+
+# Docker command
+sudo docker images
+sudo docker ps -a
+sudo docker rm
+sudo docker rmi
