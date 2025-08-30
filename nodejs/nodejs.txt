@@ -1,0 +1,21 @@
+# 创建 Typescript 项目
+npm install -g typescript ts-node
+tsc -v
+ts-node -v
+
+mkdir demo
+cd demo
+mkdir dist src
+
+tsc --init
+pnpm --init
+
+# tsconfig.json
+# 将outDir和rootDir的注释解开
+
+# package.json
+"scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node index.ts"
+}
