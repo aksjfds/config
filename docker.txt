@@ -23,3 +23,16 @@ sudo docker images
 sudo docker ps -a
 sudo docker rm
 sudo docker rmi
+
+# Docker vscode
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docer
+vscode 安装docker插件 
+重启
+
+# Docker apt
+echo "deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse" > /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse" >> /etc/apt/sources.list
+apt update

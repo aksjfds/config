@@ -1,0 +1,13 @@
+# 生成新密钥：
+ssh-keygen -t ed25519 -C "2502371043@qq.com"
+
+# 获取ssh key公钥内容
+cd ~/.ssh
+cat id_rsa.pub
+
+# 验证
+ssh -T git@github.com
+
+# 配置
+git config --global user.email "2502371043@qq.com"
+git config --global user.name "aksjfds"
