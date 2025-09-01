@@ -14,8 +14,10 @@ sudo gnome-text-editor /etc/docker/daemon.json
 sudo service docker restart
 
 # Docker ubuntu
-sudo docker create -it --name aa ubuntu /bin/bash
-sudo docker start aa && sudo docker exec -it aa /bin/bash
+sudo docker create -it --name aa ubuntu
+sudo docker start aa
+sudo docket exec aa ls
+sudo docker attach aa
 sudo docker stop aa
 
 # Docker command
