@@ -9,9 +9,13 @@ sudo gnome-text-editor /etc/docker/daemon.json
         "https://docker.m.daocloud.io",
         "https://docker.1panel.live",
         "https://hub.rat.dev"
-    ]
+    ],
+    "features": {
+        "containerd-snapshotter": true
+    }
 }
-sudo service docker restart
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 
 # Docker ubuntu
 sudo docker create -it --name aa ubuntu
@@ -25,13 +29,13 @@ sudo docker images
 sudo docker ps -a
 sudo docker rm
 sudo docker rmi
+docker system prune -a
+docker create -v entrypoint:/entrypoint aa
 
 # Docker vscode
-sudo groupadd docker
-sudo gpasswd -a $USER docker
+sudo usermod -aG docker $USER
 newgrp docer
-vscode 安装docker插件 
-重启
+reboot
 
 # Docker apt
 echo "deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse" > /etc/apt/sources.list
